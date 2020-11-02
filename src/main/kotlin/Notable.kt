@@ -1,21 +1,9 @@
 interface Notable<D> {
-    val id: Int
-    val ownerId: Int
-    val date: Long
-    var text: String
-    var isDeleted: Boolean
-
-    fun addTo(dest: D)
-
-    fun delete() {
-        isDeleted = true
-    }
-
-    fun restore() {
-        isDeleted = false
-    }
-
-
+    fun addTo(dest: MutableList<D>)
+    fun delete()
+    fun restore()
+    fun getCommentById(id: Int): Comment
+    fun getCommentByIdForced(id: Int): Comment
 }
 
 
